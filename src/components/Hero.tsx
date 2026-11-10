@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { ChevronRight, Activity, Clock, FileText, ArrowRight } from "lucide-react";
 import { triggerModal } from "@/components/GlobalModals";
+import { SKDR_DASHBOARD_LOGIN_URL } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -78,13 +79,13 @@ export default function Hero() {
 
               {/* Tombol Aksi Kuning Amber */}
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <button
-                  onClick={() => triggerModal("dashboard")}
+                <a
+                  href={SKDR_DASHBOARD_LOGIN_URL}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f97316] hover:from-[#d97706] hover:to-[#ea580c] text-white font-semibold text-sm sm:text-base shadow-lg shadow-amber-950/20 active:scale-95 transition-all duration-200 cursor-pointer group"
                 >
                   <span>Pantau Dasbor SKDR</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </a>
               </div>
             </div>
 

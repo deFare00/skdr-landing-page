@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Menu, X, ShieldCheck } from "lucide-react";
 import { triggerModal } from "@/components/GlobalModals";
+import { SKDR_DASHBOARD_LOGIN_URL } from "@/lib/constants";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -103,23 +104,23 @@ export default function Navbar() {
               Sistem Online 24/7
             </div>
 
-            <button
-              onClick={() => triggerModal("portal")}
+            <a
+              href={SKDR_DASHBOARD_LOGIN_URL}
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#009896] hover:bg-[#008381] active:scale-95 text-white text-xs md:text-[13px] font-medium shadow-sm transition-all duration-150 cursor-pointer whitespace-nowrap"
             >
               <ShieldCheck className="w-4 h-4" />
               <span>Akses SKDR</span>
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
-            <button
-              onClick={() => triggerModal("portal")}
+            <a
+              href={SKDR_DASHBOARD_LOGIN_URL}
               className="px-3 py-1.5 rounded-full bg-[#009896] text-white text-xs font-medium cursor-pointer"
             >
               Akses SKDR
-            </button>
+            </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -151,16 +152,14 @@ export default function Navbar() {
               </a>
             ))}
             <div className="pt-3 border-t border-slate-100">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  triggerModal("portal");
-                }}
+              <a
+                href={SKDR_DASHBOARD_LOGIN_URL}
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#009896] text-white font-medium text-sm shadow cursor-pointer"
               >
                 <ShieldCheck className="w-4 h-4" />
                 Masuk ke Portal SKDR
-              </button>
+              </a>
             </div>
           </div>
         </div>
