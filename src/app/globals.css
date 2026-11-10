@@ -2,25 +2,40 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1e293b;
+  --kemenkes-teal: #009896;
+  --kemenkes-teal-dark: #007e80;
+  --kemenkes-teal-light: #e6f7f7;
+  --kemenkes-lime: #b6d31e;
+  --kemenkes-amber: #f59e0b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom organic wave backgrounds */
+.hero-gradient {
+  background: linear-gradient(135deg, #008f8e 0%, #009b99 60%, #00a89d 100%);
+}
+
+.custom-shadow {
+  box-shadow: 0 10px 30px -10px rgba(0, 152, 150, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(0, 152, 150, 0.18), 0 6px 16px -4px rgba(0, 0, 0, 0.06);
 }
